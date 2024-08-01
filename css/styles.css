@@ -15,6 +15,10 @@
 Card CSS & Flip Animation
 */
 
+/*
+Card CSS & Flip Animation
+*/
+
 .card-flip > div {
     backface-visibility: hidden;
     transition: transform 300ms;
@@ -23,22 +27,12 @@ Card CSS & Flip Animation
     height: 100%;
     margin: 0;
     display: flex;
-    flex-direction: column; /* Ensure content stacks vertically */
-    justify-content: center; /* Center content vertically */
-    align-items: center; /* Center content horizontally */
-    padding: 15px; /* Adjust padding as needed */
-    box-sizing: border-box; /* Include padding and border in element’s total width and height */
-}
-
-.card-front, .card-back {
-    width: 100%;
-    height: 100%;
-}
+  }
 
 .card-front {
     transform: rotateY(0deg);
 }
-
+  
 .card-back {
     transform: rotateY(180deg);
     position: absolute;
@@ -48,31 +42,10 @@ Card CSS & Flip Animation
 .card-flip:hover .card-front {
     transform: rotateY(-180deg);
 }
-
+    
 .card-flip:hover .card-back {
     transform: rotateY(0deg);
 }
-
-/* Responsive styles */
-@media (max-width: 768px) {
-    .card-flip > div {
-        padding: 10px; /* Reduce padding on smaller screens */
-    }
-
-    .card-title {
-        font-size: 1.25rem; /* Adjust font size for smaller screens */
-    }
-
-    .card-text {
-        font-size: 1rem; /* Adjust font size for smaller screens */
-    }
-
-    .btn {
-        font-size: 0.875rem; /* Adjust button font size for smaller screens */
-        padding: 10px 15px; /* Adjust button padding for smaller screens */
-    }
-}
-
 
 :root {
   --bs-blue: #0d6efd;
