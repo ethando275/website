@@ -6,20 +6,107 @@
         <meta name="description" content="" />
         <meta name="author" content="" />
         <title>Projects</title>
-       <!-- Tab Icon-->
-       <link rel="icon" type="image/x-icon" href="assets/anbu_icon.ico" />
-        <!-- Bootstrap icons-->
+        <!-- Tab Icon -->
+        <link rel="icon" type="image/x-icon" href="assets/anbu_icon.ico" />
+        <!-- Bootstrap icons -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
-        <!-- Core theme CSS (includes Bootstrap)-->
+        <!-- Core theme CSS (includes Bootstrap) -->
         <link href="css/styles.css" rel="stylesheet" />
+        <!-- Custom CSS for card flip -->
+        <style>
+            /* Card Flip CSS */
+            .card-flip > div {
+                backface-visibility: hidden;
+                transition: transform 300ms;
+                transition-timing-function: linear;
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                display: flex;
+                align-items: center; /* Center content vertically */
+                justify-content: center; /* Center content horizontally */
+            }
+
+            .card-front,
+            .card-back {
+                display: flex;
+                align-items: center; /* Center content vertically */
+                justify-content: center; /* Center content horizontally */
+                padding: 15px; /* Add some padding for better spacing */
+            }
+
+            .card-front {
+                transform: rotateY(0deg);
+            }
+
+            .card-back {
+                transform: rotateY(180deg);
+                position: absolute;
+                top: 0;
+            }
+
+            /* Card flip effect */
+            .card-flip:hover .card-front {
+                transform: rotateY(-180deg);
+            }
+
+            .card-flip:hover .card-back {
+                transform: rotateY(0deg);
+            }
+
+            /* Responsive adjustments */
+            @media (max-width: 768px) {
+                .card-front img,
+                .card-back img {
+                    max-width: 100%; /* Ensure images don't overflow */
+                    height: auto; /* Maintain aspect ratio */
+                }
+
+                .card-title {
+                    font-size: 1.25rem; /* Adjust font size for mobile */
+                }
+
+                .card-text {
+                    font-size: 1rem; /* Adjust font size for mobile */
+                }
+
+                .btn {
+                    font-size: 0.875rem; /* Adjust button font size for mobile */
+                }
+
+                .card-body {
+                    padding: 10px; /* Reduce padding on mobile */
+                }
+            }
+
+            @media (max-width: 576px) {
+                .card-title {
+                    font-size: 1rem; /* Further reduce font size for very small screens */
+                }
+
+                .card-text {
+                    font-size: 0.875rem; /* Further reduce font size for very small screens */
+                }
+
+                .btn {
+                    font-size: 0.75rem; /* Further reduce button font size for very small screens */
+                }
+
+                .card-body {
+                    padding: 5px; /* Further reduce padding on very small screens */
+                }
+            }
+        </style>
     </head>
     <body class="d-flex flex-column h-100">
         <main class="flex-shrink-0">
-            <!-- Navigation-->
+            <!-- Navigation -->
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
                 <div class="container px-5">
                     <a class="navbar-brand" href="index.html">Ethan Do</a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                             <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
@@ -33,8 +120,8 @@
                     </div>
                 </div>
             </nav>
-               <!-- Page Content-->
-               <section class="py-5">
+            <!-- Page Content -->
+            <section class="py-5">
                 <div class="container px-5 my-5">
                     <div class="text-center mb-5">
                         <h1 class="fw-bolder">My Projects</h1>
@@ -44,7 +131,7 @@
                             <div class="position-relative">
                                 <div class="card card-flip h-100">
                                     <div class="card-front bg-dark text-white">
-                                        <img class="card-img" src="assets/tigerspot.png" alt="Card image">
+                                        <img class="card-img" src="assets/tigerspot.png" alt="Screenshot of TigerSpot web application">
                                     </div>
                                     <div class="card-back bg-white">
                                         <div class="card-body">
@@ -53,46 +140,46 @@
                                             <a target="_blank" href="https://github.com/ethando275/TigerSpot" class="btn btn-lg btn-outline-warning">Github Link</a>
                                         </div>
                                     </div>
-                            </div>
+                                </div>
                             </div>
                         </div>
                         <div class="col-lg-6">
                             <div class="position-relative mb-5">
                                 <div class="card card-flip h-100">
                                     <div class="card-front bg-dark text-white">
-                                        <img class="card-img" src="assets/discord_icon.png" alt="Card image">
+                                        <img class="card-img" src="assets/discord_icon.png" alt="Discord bot icon">
                                     </div>
                                     <div class="card-back bg-white">
                                         <div class="card-body">
                                             <h3 class="card-title">Discord Bot</h3>
                                             <p class="card-text">Discord Bot implemented using Discord.py package and python3.</p>
-                                            <a target="_blank" href="" class="btn btn-lg btn-outline-warning">In Progress</a>
+                                            <a target="_blank" href="#" class="btn btn-lg btn-outline-warning">In Progress</a>
                                         </div>
                                     </div>
-                            </div>
+                                </div>
                             </div>
                         </div>
                         <div class="col-lg-6">
                             <div class="position-relative mb-5">
                                 <div class="card card-flip h-100">
                                     <div class="card-front bg-dark text-white">
-                                        <img class="card-img" src="assets/background.png" alt="Card image">
+                                        <img class="card-img" src="assets/background.png" alt="Platformer video game background">
                                     </div>
                                     <div class="card-back bg-white">
                                         <div class="card-body">
                                             <h3 class="card-title">Platformer Video Game</h3>
-                                            <p class="card-text">Made using Unity and C# scripting. Character, animation frames, and environment made from scratch using Adobe Photoshop. </p>
+                                            <p class="card-text">Made using Unity and C# scripting. Character, animation frames, and environment made from scratch using Adobe Photoshop.</p>
                                             <a target="_blank" href="https://drive.google.com/drive/folders/1bHh-jKtmX_YMVes3hmEJFaGd_SrpwqyJ?usp=sharing" class="btn btn-lg btn-outline-warning">Project Link</a>
                                         </div>
                                     </div>
-                            </div>
+                                </div>
                             </div>
                         </div>
                         <div class="col-lg-6">
                             <div class="position-relative mb-5 mb-lg-0">
                                 <div class="card card-flip h-100">
                                     <div class="card-front bg-dark text-white">
-                                        <img class="card-img" src="assets/website_icon.png" alt="Card image">
+                                        <img class="card-img" src="assets/website_icon.png" alt="Personal website icon">
                                     </div>
                                     <div class="card-back bg-white">
                                         <div class="card-body">
@@ -101,16 +188,16 @@
                                             <a target="_blank" href="https://github.com/ethando275/website" class="btn btn-lg btn-outline-warning">Github Link</a>
                                         </div>
                                     </div>
-                            </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
         </main>
-        <!-- Bootstrap core JS-->
+        <!-- Bootstrap core JS -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
+        <!-- Core theme JS -->
         <script src="js/scripts.js"></script>
     </body>
 </html>
